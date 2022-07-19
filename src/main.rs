@@ -1,3 +1,4 @@
+mod ownership_and_functions;
 fn main() {
     println!("Hello, world!");
     let s = "hello";
@@ -14,4 +15,9 @@ fn main() {
     let tup_clone = tup;
     let (tup_clone_x, tup_clone_y) = tup_clone;
     println!("{}::{}", tup_clone_x, tup_clone_y);
+    let s2 = String::from("Ndeta");
+    let (len, s) = ownership_and_functions::calculate_len(s2);
+    println!("{}, {}", len, s);
+    let s4 = String::from("Ndeta");
+    ownership_and_functions::calculate_length_with_refernce(&s4);
 }
