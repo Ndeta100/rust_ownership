@@ -10,13 +10,28 @@ pub fn give_ownership() -> String {
     let s = String::from("Hello");
     s
 }
+
 pub fn take_and_gives_back(a_string: String) -> String {
     a_string
 }
+
 pub fn calculate_len(s: String) -> (String, usize) {
     let length = s.len();
     (s, length)
 }
+
 pub fn calculate_length_with_refernce(s: &String) -> usize {
     s.len()
+}
+
+pub fn change(some_string: &mut String) {
+    some_string.push_str("Hi")
+}
+pub fn dangle() -> &String {
+    let s = String::from("hi");
+    &s
+}
+pub fn not_dangle() -> String {
+    let s = String::from("hi");
+    s
 }
